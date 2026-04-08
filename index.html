@@ -117,17 +117,28 @@ h1{
   gap:14px;
 }
 .hero-photo{
-  min-height:220px;
+  min-height:260px;
   border-radius:22px;
-  border:1px dashed rgba(255,255,255,.18);
+  border:1px solid var(--line);
   background:rgba(255,255,255,.03);
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
-  padding:24px;
-  color:var(--muted);
-  font-size:1rem;
+  padding:20px;
+  overflow:hidden;
+}
+
+.hero-photo img{
+  width:100%;
+  max-width:260px;
+  height:auto;
+  max-height:320px;
+  object-fit:contain;
+  object-position:center top;
+  display:block;
+  margin:auto;
+  border-radius:18px;
+}
 }
 .stat{
   padding:16px;
