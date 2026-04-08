@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruhama Adnew | Analytics Portfolio</title>
+<style>
+:root{
+  --bg:#07111f;
+  --bg-soft:#0c1830;
+  --card:#0f1d38;
+  --card-2:#132447;
+  --text:#edf3ff;
+  --muted:#b9c6e3;
+  --line:rgba(255,255,255,.08);
+  --accent:#8eb6ff;
+  --accent-2:#95e1cb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(142,182,255,.18), transparent 24%),
+    radial-gradient(circle at 100% 15%, rgba(149,225,203,.12), transparent 20%),
+    linear-gradient(180deg, #07111f 0%, #081425 45%, #07111f 100%);
+  line-height:1.6;
+}
+a{color:inherit}
+.container{max-width:1140px; margin:0 auto; padding:0 24px}
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
+  background:rgba(7,17,31,.8);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1140px;
+  margin:0 auto;
+  padding:15px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+.brand{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.brand span{color:var(--accent)}
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  color:var(--muted);
+  font-size:.96rem;
+}
+.nav-links a{
+  text-decoration:none;
+}
+.hero{padding:72px 0 28px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:22px;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(19,36,71,.95), rgba(11,24,47,.95));
+  box-shadow:0 18px 46px rgba(0,0,0,.28);
+}
+.hero-main{padding:34px}
+.badge{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  font-size:.84rem;
+  color:#dfe8ff;
+}
+h1{
+  margin:18px 0 14px;
+  font-size:clamp(2.4rem,6vw,4.9rem);
+  line-height:1.02;
+  letter-spacing:-.05em;
+}
+.lead{
+  max-width:62ch;
+  color:var(--muted);
+  font-size:1.04rem;
+  margin:0 0 20px;
+}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+.btn{
+  text-decoration:none;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:700;
+  background:#1a2c56;
+  border:1px solid var(--line);
+}
+.btn.secondary{background:transparent}
+.hero-side{
+  padding:22px;
+  display:grid;
+  gap:14px;
+}
+.hero-photo{
+  min-height:520px;
+  border-radius:22px;
+  border:1px dashed rgba(255,255,255,.18);
+  background:rgba(255,255,255,.03);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  color:var(--muted);
+  font-size:1rem;
+}
+.stat{
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+}
+.stat strong{
+  display:block;
+  font-size:1.38rem;
+  margin-bottom:4px;
+}
+.stat span{color:var(--muted)}
+section{padding:28px 0}
+.section-head{margin-bottom:18px}
+.kicker{
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--accent-2);
+}
+h2{
+  margin:8px 0 8px;
+  font-size:clamp(1.55rem,3vw,2.5rem);
+  letter-spacing:-.03em;
+}
+.section-head p{
+  margin:0;
+  max-width:72ch;
+  color:var(--muted);
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.panel{padding:22px}
+.small{
+  color:var(--muted);
+  font-size:.96rem;
+}
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  background:#1a2b54;
+  border:1px solid var(--line);
+  color:#dde7ff;
+  font-size:.9rem;
+}
+.project{
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.tag{
+  display:inline-block;
+  width:max-content;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#1a2b54;
+  border:1px solid var(--line);
+  font-size:.8rem;
+  font-weight:700;
+  color:#e6eeff;
+}
+.project h3{
+  margin:0;
+  font-size:1.34rem;
+}
+.project p{
+  margin:0;
+  color:var(--muted);
+}
+.project ul{
+  margin:0;
+  padding-left:18px;
+}
+.project li{margin:4px 0}
+.highlight{
+  border-left:3px solid var(--accent);
+  padding-left:12px;
+  color:#eef3ff;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+footer{
+  padding:34px 0 50px;
+  color:var(--muted);
+}
+hr.sep{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:12px 0 0;
+}
+@media (max-width:930px){
+  .hero-grid,.grid-2,.grid-3,.split{
+    grid-template-columns:1fr;
+  }
+  .hero-photo{
+    min-height:320px;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Ruhama <span>Adnew</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="card hero-main">
+      <div class="badge">Business Administration • Statistics Minor • Business Analytics</div>
+      <h1>Portfolio built around analytics, reporting, and business insight.</h1>
+      <p class="lead">
+        Business Administration student with a Statistics minor and Business Analytics background.
+        Experience across data analysis, reporting, market research, and business operations in academic and business settings.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#projects">View projects</a>
+        <a class="btn secondary" href="#experience">See experience</a>
+      </div>
+    </div>
+
+    <div class="card hero-side">
+      <div class="hero-photo">
+        Add your portrait here later
+      </div>
+      <div class="stat">
+        <strong>3+</strong>
+        <span>analytics-focused academic projects</span>
+      </div>
+      <div class="stat">
+        <strong>SQL • Power BI • Excel</strong>
+        <span>tools used in coursework and business analysis</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">About</div>
+      <h2>Background</h2>
+      <p>
+        I am a Business Administration student at Truman State University with a Statistics minor and a strong interest in analytics, reporting, and business decision-making.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Projects</div>
+      <h2>Selected work</h2>
+      <p>Academic and applied work focused on data cleaning, modeling, reporting, and business insights.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card project">
+        <span class="tag">Bank Marketing</span>
+        <h3>Bank Marketing Subscription Analysis</h3>
+        <p>Analyzed a large bank marketing dataset to identify drivers of term deposit subscription and support predictive modeling.</p>
+      </div>
+
+      <div class="card project">
+        <span class="tag">Energy Analytics</span>
+        <h3>Chicago Energy Usage Analysis</h3>
+        <p>Studied energy demand patterns by building type, size, season, and location using regression and visual analysis.</p>
+      </div>
+
+      <div class="card project">
+        <span class="tag">Music Data</span>
+        <h3>Spotify Audio Features Analysis</h3>
+        <p>Cleaned and analyzed Spotify song data, then used hypothesis testing to examine factors linked to popularity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Experience</div>
+      <h2>Professional experience</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="card panel">
+        <h3>Chain Addis / Etete Wear</h3>
+        <p class="small">Analyst & Market Insights Associate / Co-Founder</p>
+        <p class="highlight">Worked on sales tracking, customer behavior analysis, reporting, and business insights using Shopify, GA4, SQL, Excel, and Power BI.</p>
+      </div>
+
+      <div class="card panel">
+        <h3>Mystic Meadows Yoga</h3>
+        <p class="small">Marketing & Data Analysis Intern</p>
+        <p>Supported business operations, communication, research, and marketing-related project work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Skills</div>
+      <h2>Tools and strengths</h2>
+    </div>
+
+    <div class="card panel">
+      <div class="chips">
+        <span class="chip">Excel</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">Tableau</span>
+        <span class="chip">Google Sheets</span>
+        <span class="chip">Data Visualization</span>
+        <span class="chip">Reporting</span>
+        <span class="chip">Market Research</span>
+        <span class="chip">Business Operations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Contact</div>
+      <h2>Get in touch</h2>
+      <p>Email: ruhamaadnew0@gmail.com | Truman email: qm73848@truman.edu</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <hr class="sep">
+    <p>Ruhama Adnew • Analytics Portfolio</p>
+  </div>
+</footer>
+
+</body>
+</html>
